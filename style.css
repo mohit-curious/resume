@@ -1,0 +1,144 @@
+/* ==========================================================================
+   RESET & SYSTEM BASE
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #1a202c;
+  background-color: #f7fafc;
+  line-height: 1.42;
+  font-size: 9.8pt;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   PAGE CONTAINER (SCREEN VIEW)
+   ========================================================================== */
+.page {
+  background: #ffffff;
+  max-width: 860px;
+  width: 92%;
+  margin: 24px auto;
+  padding: 36px 44px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+}
+
+/* Utility Print Button */
+.top-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.print-btn {
+  cursor: pointer;
+  padding: 5px 12px;
+  font-size: 8.5pt;
+  font-weight: 600;
+  color: #2b6cb0;
+  background: #ffffff;
+  border: 1px solid #2b6cb0;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.print-btn:hover {
+  background: #ebf8ff;
+}
+
+/* ==========================================================================
+   HEADER & CONTACT BAR
+   ========================================================================== */
+header {
+  border-bottom: 2px solid #2b6cb0;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.name-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+h1 {
+  font-size: 21pt;
+  font-weight: 800;
+  color: #1a365d;
+  letter-spacing: -0.5px;
+}
+
+.target-role {
+  font-size: 10pt;
+  font-weight: 700;
+  color: #2b6cb0;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.contact-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 8.8pt;
+  color: #4a5568;
+}
+
+.contact-bar a {
+  color: #2b6cb0;
+  text-decoration: none;
+}
+
+.contact-bar a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   SECTION HEADINGS
+   ========================================================================== */
+section {
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: 10pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #2b6cb0;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 2px;
+  margin-bottom: 7px;
+}
+
+/* ==========================================================================
+   EXPERIENCE / JOBS
+   ========================================================================== */
+.job {
+  margin-bottom: 10px;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 1px;
+}
+
+.job-title-company {
+  font-size: 9.8
