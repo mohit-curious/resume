@@ -340,13 +340,14 @@
         <div class="job-date">2025 – Present</div>
       </div>
       <div class="job-subteam">Adobe Learning Manager (ALM) Platform Architecture</div>
-      <ul>
-        <li><strong><u>Coined &amp; Resolved the ‘Whale-Effect’</u>:</strong> Architected an asynchronous <strong>Lazy Enrollment engine</strong> that eradicated a <strong>20M-row MySQL write fan-out</strong> per bulk admin action, eliminating primary table lock contention.</li>
-        <li><strong>Storage &amp; Database Modernization:</strong> Reclaimed <strong>350 GB of primary MySQL storage (including 150 GB in secondary indexes)</strong>, cutting buffer-pool thrashing and unblocking migration to a distributed database.</li>
-        <li><strong>Downstream Blast-Radius Containment:</strong> Prevented worker starvation across <strong>Kafka</strong> notification queues, stabilized <strong>Debezium CDC → AWS SQS → Spark EMR</strong> pipelines into <strong>Delta Lake</strong>, and protected <strong>OpenSearch</strong> semantic search for user-facing AI agents.</li>
-        <li><strong><u>Enterprise SDLC AI Platform</u> (<code>ALM-Context</code>):</strong> Standardized AI engineering across <strong>250+ repositories</strong>, centralizing codebase intelligence (API contracts, DB schemas, domain workflows, and machine-readable repo skills).</li>
-        <li><strong>Governed Multi-Repo AI Workflows:</strong> Automated a two-phase AI pipeline translating PRDs into <strong>HLDs, schema updates, code changes, and cross-repo PR dependency DAGs</strong>, compressing feature discovery from days to hours.</li>
-      </ul>
+        <ul>
+          <li><strong><u>Coined &amp; Resolved the ‘Whale-Effect’:</u></strong> Architected an asynchronous <strong>Lazy Enrollment engine</strong> that eradicated a <strong>20M-row MySQL write fan-out</strong> per bulk admin action, eliminating RDS write I/O surges and lock contention.</li>
+          <li><strong>Storage Optimization &amp; Lifecycle Extension:</strong> Reclaimed <strong>350 GB of primary AWS RDS MySQL storage (including 150 GB in secondary indexes)</strong> by purging unstarted course bloat; slashed cloud IOPS/memory costs and <strong>avoided a 6-month distributed database re-platforming effort (TiDB)</strong>.</li>
+          <li><strong>Downstream Blast-Radius Containment:</strong> Phased migration to protect reporting SLAs—re-denormalized CDC streams via <strong>Spark EMR</strong> into <strong>Delta Lake</strong>, preventing breaking schema changes across Kafka, compliance dashboards, and <strong>OpenSearch</strong>.</li>
+          <li><strong><u>Enterprise SDLC AI Platform</u> (<code>ALM-Context</code>):</strong> Standardized AI engineering across <strong>200+ active repositories</strong>, centralizing codebase intelligence (API contracts, DB schemas, domain workflows, and machine-readable repo skills).</li>
+          <li><strong>Governed Multi-Repo AI Workflows:</strong> Automated a two-phase AI pipeline translating PRDs into <strong>HLDs, schema updates, code changes, and cross-repo PR dependency DAGs</strong>, compressing feature discovery from days to hours.</li>
+          <li><strong>Proactive AI Telemetry Diagnostics:</strong> Engineered an <strong>AI diagnostic workflow via MCP (Model Context Protocol)</strong> over Splunk logs and MySQL query profiles, discovering latent write amplification overlooked by standard APM tools.</li>
+        </ul>
     </div>
 
     <!-- Microsoft -->
