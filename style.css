@@ -245,30 +245,35 @@ li strong {
 }
 
 /* ==========================================================================
-   PRINT ENGINE OPTIMIZATION (Hardware Safe)
+   PRINT ENGINE OPTIMIZATION (Hardware Safe & Zero Clipping)
    ========================================================================== */
 @page {
   size: A4 portrait;
-  margin: 12mm 15mm;
+  margin: 12mm 16mm; /* Enforces 16mm left/right printable margin on every sheet */
 }
 
 @media print {
+  *, *::before, *::after {
+    box-sizing: border-box !important;
+  }
+
   html, body {
     background: #ffffff !important;
     font-size: 9pt;
     line-height: 1.34;
-    width: 100% !important;
+    width: auto !important;      /* FIXED: 'auto' prevents pushing content off the right edge */
     margin: 0 !important;
     padding: 0 !important;
   }
 
   .page {
-    width: 100% !important;
+    width: auto !important;       /* FIXED: Adapts naturally to @page margin bounds */
     max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
     box-shadow: none !important;
     border-radius: 0 !important;
+    overflow: visible !important;
   }
 
   .no-print, .top-actions {
@@ -280,7 +285,7 @@ li strong {
     color: inherit;
   }
 
-  /* Prevent broken page splits */
+  /* Prevent broken page splits across items */
   .job, .pub-item, .edu-item, .skills-block {
     page-break-inside: avoid;
     break-inside: avoid;
