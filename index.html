@@ -258,6 +258,14 @@
       margin: 10mm 0; /* Vertical breathing room, zero horizontal browser margin */
     }
 
+    @media print {}/* ==========================================================================
+       PRINT ENGINE: FULL MARGIN RECOVERY (TOP, BOTTOM, LEFT, RIGHT)
+       ========================================================================== */
+    @page {
+      size: A4 portrait;
+      margin: 12mm 0; /* Ensures 12mm margin at top and bottom of EVERY page */
+    }
+
     @media print {
       html, body {
         background: #ffffff !important;
@@ -269,11 +277,11 @@
       }
 
       .page {
-        /* Forces hardware-safe margins inside the box itself */
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 auto !important;
-        padding: 0 16mm !important; /* GUARANTEES 16mm left/right margin on paper */
+        /* 12mm Top & Bottom, 16mm Left & Right */
+        padding: 12mm 16mm !important;
         box-sizing: border-box !important;
         box-shadow: none !important;
         border-radius: 0 !important;
@@ -289,10 +297,7 @@
         color: inherit;
       }
 
-      .job {
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
+      /* Keep individual sections unbroken across page splits */
       .job, .pub-item, .edu-item, .skills-block {
         page-break-inside: avoid;
         break-inside: avoid;
