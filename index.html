@@ -256,7 +256,7 @@
        ========================================================================== */
     @page {
       size: A4 portrait;
-      margin: 14mm 16mm; /* Ensures 12mm margin at top and bottom of EVERY page */
+      margin: 0; /* Let .page control the exact 14mm/16mm padding on every page */
     }
 
     @media print {
@@ -272,12 +272,17 @@
       .page {
         width: 100% !important;
         max-width: 100% !important;
-        margin: 0 auto !important;
-        /* 12mm Top & Bottom, 16mm Left & Right */
+        margin: 0 !important;
+        /* Applies 14mm Top/Bottom and 16mm Left/Right to EVERY page */
+        padding: 14mm 16mm !important;
         box-sizing: border-box !important;
         box-shadow: none !important;
         border-radius: 0 !important;
         border: none !important;
+
+        /* CRITICAL: Clones the padding onto Page 2, Page 3, etc. instead of slicing it */
+        -webkit-box-decoration-break: clone !important;
+        box-decoration-break: clone !important;
       }
 
       .no-print, .top-actions {
