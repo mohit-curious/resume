@@ -30,7 +30,7 @@
     }
 
     /* ==========================================================================
-       SCREEN CONTAINER
+       SCREEN VIEW CONTAINER
        ========================================================================== */
     .page {
       background: #ffffff;
@@ -138,13 +138,7 @@
     }
 
     .job {
-      margin-bottom: 16px; /* Increases separation between roles */
-      padding-bottom: 4px;
-    }
-    .job:not(:last-child) {
-      border-bottom: 1px solid #edf2f7;
-      padding-bottom: 12px;
-      margin-bottom: 14px;
+      margin-bottom: 13px;
     }
 
     .job-header {
@@ -157,7 +151,6 @@
       margin-bottom: 2px;
     }
 
-    /* High-contrast Role & Company Highlight */
     .job-title-company {
       font-size: 10.2pt;
       font-weight: 700;
@@ -187,7 +180,6 @@
       margin-bottom: 4px;
     }
 
-    /* Left-aligned, readable bullet points */
     ul {
       list-style-type: disc;
       padding-left: 18px;
@@ -251,19 +243,11 @@
     }
 
     /* ==========================================================================
-       PRINT ENGINE: BULLETPROOF MARGIN RECOVERY
+       PRINT MEDIA ENGINE: APPLIES TO EVERY PRINTED SHEET (PAGE 1, 2, ETC.)
        ========================================================================== */
     @page {
       size: A4 portrait;
-      margin: 10mm 0; /* Vertical breathing room, zero horizontal browser margin */
-    }
-
-    @media print {}/* ==========================================================================
-       PRINT ENGINE: FULL MARGIN RECOVERY (TOP, BOTTOM, LEFT, RIGHT)
-       ========================================================================== */
-    @page {
-      size: A4 portrait;
-      margin: 12mm 0; /* Ensures 12mm margin at top and bottom of EVERY page */
+      margin: 14mm 16mm; /* Enforces 14mm Top/Bottom and 16mm Left/Right on ALL pages */
     }
 
     @media print {
@@ -279,10 +263,8 @@
       .page {
         width: 100% !important;
         max-width: 100% !important;
-        margin: 0 auto !important;
-        /* 12mm Top & Bottom, 16mm Left & Right */
-        padding: 12mm 16mm !important;
-        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 0 !important; /* Delegates all margins to @page for multi-page consistency */
         box-shadow: none !important;
         border-radius: 0 !important;
         border: none !important;
@@ -297,7 +279,7 @@
         color: inherit;
       }
 
-      /* Keep individual sections unbroken across page splits */
+      /* Prevent ugly splits across pages */
       .job, .pub-item, .edu-item, .skills-block {
         page-break-inside: avoid;
         break-inside: avoid;
@@ -313,7 +295,7 @@
 <body>
 
 <div class="page">
-  <!-- Print Button (Hidden in Print) -->
+  <!-- Top Utility Bar -->
   <div class="top-actions no-print">
     <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
   </div>
@@ -340,7 +322,7 @@
     <div class="job">
       <div class="job-header">
         <div class="job-title-company">Principal Engineering Architect (P55) <span class="job-company">| Adobe</span></div>
-        <div class="job-date">Dec 2025 – Present</div>
+        <div class="job-date">2025 – Present</div>
       </div>
       <div class="job-subteam">Adobe Learning Manager (ALM) Platform Architecture</div>
       <ul>
@@ -357,7 +339,7 @@
     <div class="job">
       <div class="job-header">
         <div class="job-title-company">Principal Software Engineer <span class="job-company">| Microsoft</span></div>
-        <div class="job-date">Sep 2024 – Oct 2025</div>
+        <div class="job-date">2024 – 2025</div>
       </div>
       <div class="job-subteam">M365 Office Online Infrastructure &amp; Shared Services</div>
       <ul>
@@ -368,7 +350,6 @@
         <li><strong>Autonomous AIOps Remediation (Charter 3):</strong> Engineered an AI-driven incident auto-remediation platform automating triage and runbook mitigations, drastically slashing <strong>MTTM</strong> across a <strong>~50-person organization</strong>.</li>
       </ul>
     </div>
-
 
     <!-- Google -->
     <div class="job">
@@ -388,7 +369,7 @@
     <div class="job">
       <div class="job-header">
         <div class="job-title-company">Computer Scientist 2 / MTS 2 <span class="job-company">| Adobe</span></div>
-        <div class="job-date">2012 – 2014, 2016 – 2021</div>
+        <div class="job-date">2016 – 2021, 2012 – 2014</div>
       </div>
       <div class="job-subteam">Enterprise Commerce, Creative Cloud &amp; Primetime</div>
       <ul>
@@ -402,7 +383,7 @@
     <div class="job">
       <div class="job-header">
         <div class="job-title-company">Senior MTS <span class="job-company">| Octro.com</span></div>
-        <div class="job-date">Jul 2014 – Dec 2015</div>
+        <div class="job-date">2014 – 2015</div>
       </div>
       <div class="job-subteam">Real-Time Gaming Infrastructure &amp; Retention</div>
       <ul>
@@ -416,7 +397,7 @@
     <div class="job">
       <div class="job-header">
         <div class="job-title-company">Software Development Engineer <span class="job-company">| Amazon</span></div>
-        <div class="job-date">Jul 2011 – Apr 2012</div>
+        <div class="job-date">2011 – 2012</div>
       </div>
       <div class="job-subteam">Flexible Payment Service (FPS)</div>
       <ul>
