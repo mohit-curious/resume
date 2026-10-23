@@ -138,7 +138,13 @@
     }
 
     .job {
-      margin-bottom: 13px;
+      margin-bottom: 16px; /* Increases separation between roles */
+      padding-bottom: 4px;
+    }
+    .job:not(:last-child) {
+      border-bottom: 1px solid #edf2f7;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .job-header {
@@ -151,6 +157,7 @@
       margin-bottom: 2px;
     }
 
+    /* High-contrast Role & Company Highlight */
     .job-title-company {
       font-size: 10.2pt;
       font-weight: 700;
@@ -180,6 +187,7 @@
       margin-bottom: 4px;
     }
 
+    /* Left-aligned, readable bullet points */
     ul {
       list-style-type: disc;
       padding-left: 18px;
@@ -242,12 +250,13 @@
       vertical-align: middle;
     }
 
+   
     /* ==========================================================================
-       PRINT MEDIA ENGINE: APPLIES TO EVERY PRINTED SHEET (PAGE 1, 2, ETC.)
+       PRINT ENGINE: FULL MARGIN RECOVERY (TOP, BOTTOM, LEFT, RIGHT)
        ========================================================================== */
     @page {
       size: A4 portrait;
-      margin: 14mm 16mm; /* Enforces 14mm Top/Bottom and 16mm Left/Right on ALL pages */
+      margin: 14mm 16mm; /* Ensures 12mm margin at top and bottom of EVERY page */
     }
 
     @media print {
@@ -263,8 +272,9 @@
       .page {
         width: 100% !important;
         max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important; /* Delegates all margins to @page for multi-page consistency */
+        margin: 0 auto !important;
+        /* 12mm Top & Bottom, 16mm Left & Right */
+        box-sizing: border-box !important;
         box-shadow: none !important;
         border-radius: 0 !important;
         border: none !important;
@@ -279,7 +289,7 @@
         color: inherit;
       }
 
-      /* Prevent ugly splits across pages */
+      /* Keep individual sections unbroken across page splits */
       .job, .pub-item, .edu-item, .skills-block {
         page-break-inside: avoid;
         break-inside: avoid;
@@ -295,7 +305,7 @@
 <body>
 
 <div class="page">
-  <!-- Top Utility Bar -->
+  <!-- Print Button (Hidden in Print) -->
   <div class="top-actions no-print">
     <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
   </div>
